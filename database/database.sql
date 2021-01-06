@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS photos_db;
+
+USE photos_db;
+
+CREATE TABLE photos(
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(40),
+    description VARCHAR(100),
+    image VARCHAR(200),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
