@@ -5,6 +5,9 @@ import cors from "cors";
 //routes
 import IndexRoutes from "./routes/index.routes";
 import photosRoutes from "./routes/photos.routes";
+import usersRoutes from "./routes/users.routes";
+
+
 
 class Server {
 
@@ -29,6 +32,7 @@ class Server {
     routes():any {
         this.app.use(IndexRoutes);
         this.app.use('/api/photos', photosRoutes);
+        this.app.use('/api/users', usersRoutes);
     }
     // metodo para inicializar el servidor de backend
     start(): any {

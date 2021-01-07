@@ -9,3 +9,12 @@ CREATE TABLE photos(
     image VARCHAR(200),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE users(
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30)
+);
+
+ALTER TABLE photos ADD id_user INT NOT NULL;
+ALTER TABLE photos ADD CONSTRAINT fk_UsPh FOREIGN KEY (id_user) REFERENCES users (id) ON DELETE CASCADE;

@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 //routes
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
 const photos_routes_1 = __importDefault(require("./routes/photos.routes"));
+const users_routes_1 = __importDefault(require("./routes/users.routes"));
 class Server {
     constructor() {
         // atributo de clase app toma las caracteristricas del objeto express
@@ -30,6 +31,7 @@ class Server {
     routes() {
         this.app.use(index_routes_1.default);
         this.app.use('/api/photos', photos_routes_1.default);
+        this.app.use('/api/users', users_routes_1.default);
     }
     // metodo para inicializar el servidor de backend
     start() {

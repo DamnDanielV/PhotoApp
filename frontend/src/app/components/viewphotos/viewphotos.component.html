@@ -1,0 +1,22 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let photo of photos">
+      <div class="card h-100" >
+        <img [src]="photo.image | sanitizing" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ photo.title }}</h5>
+          <p class="card-text">{{ photo.description }}</p>
+          <!-- <p class="card-text">{{ photo.id_user.first_name }}</p> -->
+          <div class="container">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-warning">Modify</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ photo.created_at | date:'short' }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
