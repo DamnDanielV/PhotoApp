@@ -1,1 +1,20 @@
-<p>addphoto works!</p>
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <div class="form-control">
+                        <input type="text" [(ngModel)]="newPhoto.title" placeholder="Name" name="title">
+                    </div>
+                    <div class="form-control">
+                        <input type="text" [(ngModel)]="newPhoto.description" placeholder="description" name="description">
+                    </div>
+                    <div class="form-control">
+                        <input type="url" [(ngModel)]="newPhoto.image" placeholder="image" name="image">
+                    </div>
+                </div>
+                <button (click)="edit ? editPhoto() : addPhoto()" type="button" class="btn btn-primary btn-lg btn-block">Add photo</button>
+            </form>
+        </div>
+    </div>
+</div>

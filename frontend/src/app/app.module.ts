@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 //servicios
 import { PhotosService } from "./services/photos.service";
@@ -12,8 +13,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddphotoComponent } from './components/addphoto/addphoto.component';
 import { ViewphotosComponent } from './components/viewphotos/viewphotos.component';
 import { LoginComponent } from './components/login/login.component';
+
+//pipes
 import { SanitizingPipe } from './pipes/sanitizing.pipe';
+
+//directives
 import { SanitizeDirective } from './directives/sanitize.directive';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +29,14 @@ import { SanitizeDirective } from './directives/sanitize.directive';
     ViewphotosComponent,
     LoginComponent,
     SanitizingPipe,
-    SanitizeDirective
+    SanitizeDirective,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     PhotosService

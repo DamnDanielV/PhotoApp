@@ -13,15 +13,25 @@ import { Photo } from "../../models/photo.model";
 export class ViewphotosComponent implements OnInit {
 
   photos: Photo[] = [];
-  user: any;
-  id_users = [];
+  
 
   constructor(private photosService:PhotosService, private userService:UsersService) { }
 
   ngOnInit(): void {
+    this.getGames();
+  }
+
+  getGames() {
     this.photosService.getPhotos().subscribe( (resp:any) => {
       this.photos =  resp;
       // console.log(this.photos);
     })
+  }
+
+  deletePhoto(id:number) {
+    this.photosService.deletePhoto(id).subscribe( (resp) => {
+      console.log(resp);
+      this.getGames()
+    } )
   }
 }
