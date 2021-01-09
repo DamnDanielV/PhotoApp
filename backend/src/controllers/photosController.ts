@@ -19,6 +19,14 @@ class PhotosController {
         }
     }
 
+    public async searchPhoto (req:Request, resp:Response) {
+        const { title } = req.params;
+        console.log(title);
+        const photos = await db.query(`SELECT * FROM photos WHERE title='${title}'`);
+        resp.json(photos);            
+        
+
+    }
     //metodo para agragar fotos a la base de datos
     public async create (req:Request, res:Response) {
         await db.query('INSERT INTO photos set ?',[req.body])

@@ -4,7 +4,7 @@ exports.default = {
     database: {
         host: 'localhost',
         user: 'daniel',
-        password: 'qazwsx',
+        password: 'password',
         database: 'photos_db'
     }
 };

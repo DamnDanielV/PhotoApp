@@ -34,6 +34,14 @@ class PhotosController {
             }
         });
     }
+    searchPhoto(req, resp) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { title } = req.params;
+            console.log(title);
+            const photos = yield database_1.default.query(`SELECT * FROM photos WHERE title='${title}'`);
+            resp.json(photos);
+        });
+    }
     //metodo para agragar fotos a la base de datos
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
